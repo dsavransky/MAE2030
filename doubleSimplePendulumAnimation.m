@@ -1,13 +1,27 @@
 function [t,y] = doubleSimplePendulumAnimation(tspan,y0,mp,mq,l1,l2)
-%[t2,y2] = doubleSimplePendulumAnimation([0,10],[pi/2+0.1,-3,pi/2,0]);
+% doubleSimplePendulumAnimation numerically integrates the equations of 
+% motion of a double simple pendulum and animates the results.
+%
+% [t,y] = doubleSimplePendulumAnimation(tspan,y0,mp,mq,l1,l2) performs the 
+% integration for time array tspan, with initial conditions y0 =
+% [theta_1(t0),\dot\theta_1(t0), theta_2(t0),\dot\theta_2(t0)]] 
+% Return values t and y contain the output of the ode45 integration
+%
+% Example: 
+%    [t2,y2] = doubleSimplePendulumAnimation([0,10],[pi/2+0.1,-3,pi/2,0]);
+%    This will roughly replicate the initial conditions seen in this video:
+%    https://www.youtube.com/watch?v=U39RMUzCjiU  at time 0:18
 
+% Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
+
+% default initial conditions
 if ~exist('mp','var'), mp = 4; end
 if ~exist('mq','var'), mq = 4; end
 if ~exist('l1','var'), l1 = 1; end
 if ~exist('l2','var'), l2 = 0.75; end
 
-g=9.81; %m/s^2
-mup = mp/(mq+mp);
+g=9.81; %m/s^2  acceleration due to gravity
+mup = mp/(mq+mp);  
 muq = mq/(mq+mp);
 
 [t,y] = ode45(@double_pendulum_eq,tspan,y0);
@@ -16,10 +30,12 @@ muq = mq/(mq+mp);
 th1 = y(:,1);
 th2 = y(:,3);
 
+%reconstruct the kinematics
 r_poprime = [ l2*sin(th2),-l2*cos(th2)];
 r_oprimeo = [ l1*sin(th1),-l1*cos(th1)];
 r_po = r_poprime+r_oprimeo;
 
+%find the bounds of motion
 maxr = max(sum(r_po.^2,2));
 xmin = min([r_po(:,1);0])-maxr/10;
 xmax = max(r_po(:,1))+maxr/10;
@@ -32,11 +48,10 @@ clf(h);
 
 % create a circle and a square:
 a = 0:pi/100:2*pi;
-
 xscirc = maxr/50*sin(a);
 yscirc = maxr/50*cos(a);
 
-%step in time:
+%step in time and animate:
 for i=1:length(t)
     %plot track so far:
     plot(r_po(max([i-Inf,1]):i,1),r_po(max([i-Inf,1]):i,2),'b--');
@@ -61,7 +76,7 @@ for i=1:length(t)
     end
 end
 
-
+    % integrator function
     function yprime = double_pendulum_eq(t,y)
         th1=y(1);dth1=y(2);th2=y(3);dth2=y(4);
         beta=th2-th1;
