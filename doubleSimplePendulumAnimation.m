@@ -14,7 +14,7 @@ function [t,y] = doubleSimplePendulumAnimation(tspan,y0,mp,mq,l1,l2)
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
-% default initial conditions
+% default pendulum description
 if ~exist('mp','var'), mp = 4; end
 if ~exist('mq','var'), mq = 4; end
 if ~exist('l1','var'), l1 = 1; end
