@@ -28,7 +28,8 @@ axis([-2,2,-2,2,-2,2])
 grid on
 
 v1 = repmat([1;1;1],1,N);
-r2 = r0;
+th = linspace(0,2*pi,151);
+r2 = r0+repmat([cos(th(1));sin(th(1));0],1,N);
 %%
 for j = 1:150
     r1 = r0+v1*(j/45);
@@ -37,7 +38,7 @@ for j = 1:150
     set(G1,'XData',rG1(1),'YData',rG1(2),'ZData',rG1(3))
     
     v2 = randn(3,N);
-    r2 = r2+v2/30;
+    r2 = r2+v2/30+repmat([cos(th(j+1))-cos(th(j));sin(th(j+1))-sin(th(j));0],1,N);
     rG2 = sum(r2,2)/N;
     set(p2,'XData',r2(1,:),'YData',r2(2,:),'ZData',r2(3,:))
     set(G2,'XData',rG2(1),'YData',rG2(2),'ZData',rG2(3))
