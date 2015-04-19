@@ -31,6 +31,7 @@ function varargout = robotArm(varargin)
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
 % Written by Dmitry Savransky, 12 February 2010
+% Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
 % Begin initialization code
 gui_Singleton = 1;

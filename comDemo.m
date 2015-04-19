@@ -1,3 +1,9 @@
+% Demonstration of motion of the center of mass of a collection of 
+% particles in the case where there is and is not motion of particles 
+% relative to the center of mass. 
+
+% Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
+
 N = 300;
 th = acos(rand(1,N)*2 - 1);
 phi = rand(1,N)*2*pi;
