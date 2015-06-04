@@ -16,6 +16,8 @@ function [coordSys,as] = animEuler(h,rotSet,angs)
 % Note: If called with no arguments, this function will animate a 3-1-3
 % rotation using angles 45,30,60 in figure 1. These defaults will also be
 % used in the place of null values.
+%
+% See Ch. 10.4.1
 % 
 % Examples:  
 %     %perform the standard 3-1-3 rotation in figure 2

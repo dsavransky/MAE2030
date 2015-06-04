@@ -1,5 +1,7 @@
 function varargout = animOrbit2(varargin)
-% ANIMORBIT2 Animate an elliptical orbit.   
+% ANIMORBIT2 Animate an elliptical orbit. 
+%
+% See Tutorial 4.2
 
 % Written by Dmitry Savransky with GUIDE v2.5 24-Feb-2009 13:40:29
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)

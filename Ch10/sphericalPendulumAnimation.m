@@ -1,9 +1,10 @@
 function [t,res] = sphericalPendulumAnimation(staticic)
-
 % sphericalPendulumAnimation numerically integrates the equations of motion 
 % of a spherical pendulum and animates the results.
 % sphericalPendulumAnimation(true) will do the animation with initial
 % conditions producing circular motion about the vertical axis.
+% 
+% See Example 10.5
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

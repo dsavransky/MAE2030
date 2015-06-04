@@ -6,6 +6,8 @@ function res = simplePendulumAnimation(t,y0,doanim)
 % time array t, with initial conditions y0 ([theta(t0),\dot\theta(t0)]) and
 % animates if doanim is true. res contains the results of the numerical 
 % integration See ode45 for details.
+%
+% See Example 3.11
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

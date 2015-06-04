@@ -10,6 +10,8 @@ function [t1,t2,t3] = calcEulerAngs(A,rotSet,space)
 %OUTPUT
 % t1,t2,t3  Euler angles (in radians)
 %
+% See Ch. 10.4.1
+%
 %EXAMPLE
 % %body-3 1-2-3 Euler angles of 3x3 DCM matrix dcm:
 % [th1,th2,th3] = calcEulerAngs(dcm,[1,2,3],false);

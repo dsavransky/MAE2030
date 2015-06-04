@@ -1,4 +1,5 @@
 % Spring-Mass System/Simple Harmonic Oscillator Animation
+% See Tutorial 2.3
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

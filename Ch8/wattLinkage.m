@@ -18,6 +18,8 @@ function [t,z,r_PO] = wattLinkage(n,npathpoints,lengths,omega)
 %    wattLinkage();
 %    %animate asymmetric linkage
 %    [t,z,r_PO] = wattLinkage([],[],[5 1 2]);
+%
+% See Tutorial 8.1
 
 % Written by Dmitry Savransky 21 May 2007
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)

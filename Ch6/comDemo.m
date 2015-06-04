@@ -1,6 +1,8 @@
 % Demonstration of motion of the center of mass of a collection of 
 % particles in the case where there is and is not motion of particles 
 % relative to the center of mass. 
+%
+% See Ch. 6.1.3
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
@@ -44,7 +46,8 @@ for j = 1:150
     set(G1,'XData',rG1(1),'YData',rG1(2),'ZData',rG1(3))
     
     v2 = randn(3,N);
-    r2 = r2+v2/30+repmat([cos(th(j+1))-cos(th(j));sin(th(j+1))-sin(th(j));0],1,N);
+    r2 = r2+v2/30+repmat([cos(th(j+1))-cos(th(j));...
+        sin(th(j+1))-sin(th(j));0],1,N);
     rG2 = sum(r2,2)/N;
     set(p2,'XData',r2(1,:),'YData',r2(2,:),'ZData',r2(3,:))
     set(G2,'XData',rG2(1),'YData',rG2(2),'ZData',rG2(3))

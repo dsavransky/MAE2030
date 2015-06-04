@@ -2,6 +2,8 @@ function compareSimplePendulumSHO
 % compareSimplePendulumSHO draws plots comparing the trajectories of the
 % numerically integrated simple pendulum equations of motion with the
 % analytical results of the linearized equations.
+%
+% See Example 3.9
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

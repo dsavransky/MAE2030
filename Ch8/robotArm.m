@@ -28,6 +28,8 @@ function varargout = robotArm(varargin)
 %      aligned with the two arms (i.e. {}^\mathcal{I}\omega^\mathcal{A} =
 %      \dot\omega_1 and {}^\mathcal{I}\omega^\mathcal{B} = -\dot\omega_2).
 %
+%      See Tutorial 8.2
+%
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
 % Written by Dmitry Savransky, 12 February 2010

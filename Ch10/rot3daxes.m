@@ -41,7 +41,8 @@ hold on
 col = ['r','g','b'];
 for j=1:3
     a = get(as(j),{'Xdata','Ydata','Zdata'});
-    plot3(mean(a{1},2),mean(a{2},2),mean(a{3},2),[col(j),axSym],'LineWidth',2);
+    plot3(mean(a{1},2),mean(a{2},2),mean(a{3},2),[col(j),axSym],...
+        'LineWidth',2);
 end
 
 for j=1:20

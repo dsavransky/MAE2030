@@ -2,6 +2,7 @@ function varargout = ssrb(varargin)
 % SSRB MATLAB code for ssrb.fig
 %      Animate and explore the motion of a symmetric spinning body with a
 %      constant moment applied to one transverse body frame axis.
+%      See Example 11.9
 %
 %      SSRB, by itself, creates a new SSRB or raises the existing
 %      singleton*.

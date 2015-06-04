@@ -1,5 +1,4 @@
 function [t,res] = sphericalGyroPendulumAnimation(staticic,nospin)
-
 % sphericalGyroPendulumAnimation numerically integrates the equations of 
 % motion of a spherical gryopendulum and animates the results.
 %
@@ -12,6 +11,8 @@ function [t,res] = sphericalGyroPendulumAnimation(staticic,nospin)
 %
 % Setting both conditions to true will animate the static spherical
 % pendulum solution with ciruclar motion about the vertical axis.
+%
+% See Example 11.2
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

@@ -1,7 +1,18 @@
 function animateSphericalFrame(nopause,doeuler)
-% animageSphericalFrame generates an animation of the two rotations from an
+% animateSphericalFrame generates an animation of the two rotations from an
 % inertial (cartesian) frame to a cylindrical (polar) frame to a spherical
 % frame whose 3rd axis points at a point P.
+%
+% animateSphericalFrame(true) performs the animation without pausing
+% between steps (by default there is a pause between each rotation).
+%
+% animateSphericalFrame([],true) also shows the Euler axis (single simple
+% rotation corresponding to the two separate rotations into the spherical
+% frame).
+%
+% Ch. 10.2.2, Figure 10.4.  Note that the book uses $$\mathbf{e}_r$$ in
+% both the cylindrical and spherical frames, whereas this animation uses
+% $$\mathbf{e}_\rho$$ in the spherical frame definition for the third axis.
 %
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

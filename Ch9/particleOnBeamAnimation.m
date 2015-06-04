@@ -8,6 +8,8 @@ function [t,y] = particleOnBeamAnimation(y0)
 % 
 % [t,y] = particleOnBeamAnimation(y0) will use initial conditions y0 of the
 % form [x0,dx0,theta0,dtheta0].
+%
+% See Example 9.21
 % 
 % Example (mismatched ICs):
 %  [t,y] = particleOnBeamAnimation([1+200*eps,0,pi/6,0]);

@@ -9,6 +9,8 @@ function accelPendulumAnimation(stationary,t,y0)
 % accelPendulumAnimation([],t,y0) calculates the trajectories for time
 % array t and initial conditions y0 ([theta(t0),\dot\theta(t0)]). See ode45
 % for details.
+%
+% See Example 3.14
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

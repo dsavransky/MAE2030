@@ -9,6 +9,8 @@ function [T,Y] = cartPendulumAnimation(t,y0,doanim)
 % and animates if doanim is true. res contains the results of the numerical
 % integration. See ode45 for details.
 %
+% See Example 6.2 and Problem 6.12 
+%
 % Examples:
 %   %Cart starts at rest, pendulum inverted at 45 degrees:
 %   [T,Y] = cartPendulumAnimation([0,15],[0,0,pi/4,0],true);

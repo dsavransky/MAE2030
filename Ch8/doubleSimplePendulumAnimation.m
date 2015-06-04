@@ -7,6 +7,8 @@ function [t,y] = doubleSimplePendulumAnimation(tspan,y0,mp,mq,l1,l2)
 % [theta_1(t0),\dot\theta_1(t0), theta_2(t0),\dot\theta_2(t0)]] 
 % Return values t and y contain the output of the ode45 integration
 %
+% See Example 8.9
+%
 % Example: 
 %    [t2,y2] = doubleSimplePendulumAnimation([0,10],[pi/2+0.1,-3,pi/2,0]);
 %    This will roughly replicate the initial conditions seen in this video:

@@ -1,6 +1,7 @@
 function rotatingFrameAnimation()
 % rotatingFrameAnimation draws a rigid body fixed with a rotating frame and
 % animates its rotation in the inertial frame.
+% See Ch. 3.4.2
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
