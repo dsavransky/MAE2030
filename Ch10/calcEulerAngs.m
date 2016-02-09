@@ -37,9 +37,9 @@ switch n
         k = rotSet(3);
         
         c2 = sqrt(A(i,i)^2 + A(i,j)^2);
-        t1 = atan2(A(j,k)/c2,A(k,k)/c2);
+        t1 = atan2(A(j,k),A(k,k));
         t2 = atan2(A(i,k),c2);
-        t3 = atan2(A(i,j)/c2,A(i,i)/c2);
+        t3 = atan2(A(i,j),A(i,i));
         
     case 2
         A(ax2neginds(j)) = -A(ax2neginds(j));
@@ -47,9 +47,9 @@ switch n
         p = 6 - (i+j); %element missing from rotSet
 
         s2 = sqrt(A(i,p)^2 + A(i,j)^2);
-        t1 = atan2(A(j,i)/s2,A(p,i)/s2);
+        t1 = atan2(A(j,i),A(p,i));
         t2 = atan2(s2,A(i,i));
-        t3 = atan2(A(i,j)/s2,A(i,p)/s2);
+        t3 = atan2(A(i,j),A(i,p));
         
     otherwise
         error('calcEulerAngs:inputError','Invalid rotSet.')
