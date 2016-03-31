@@ -38,16 +38,24 @@ handles.output = hObject;
 handles.data.isPlaying = false;
 handles.data.RL = get(handles.RL_slider,'Value');
 set(handles.RL,'String',num2str(handles.data.RL))
-handles.data.th = linspace(0,2*pi,100);
+th = 0:2*pi/100:2*pi;
+handles.data.th = th(1:end-1);
 handles.data.l = 1/5;
 handles.data.w = handles.data.l/2;
 handles.data.j = 1;
+handles.data.k = 1;
 
 %do initial calculation
 handles.data.x = handles.data.RL*cos(handles.data.th) + ...
     sqrt(1 - handles.data.RL^2*sin(handles.data.th).^2);
 handles.data.axlim = [-handles.data.RL,handles.data.RL+1+handles.data.l,...
-    -handles.data.RL,handles.data.RL]*1.1;
+    -handles.data.RL,handles.data.RL*2]*1.1;
+
+v = -handles.data.RL*sin(handles.data.th).*(1 + handles.data.RL*...
+    cos(handles.data.th)./sqrt(1 - handles.data.RL^2*sin(handles.data.th).^2));
+handles.data.v = repmat(v,1,5)/abs(max(v))*handles.data.RL/2+3*handles.data.RL/2;
+handles.data.vx = linspace(handles.data.axlim(1),handles.data.axlim(2),...
+    length(handles.data.v));
 
 % This sets up the initial plot
 hold on
@@ -61,6 +69,9 @@ handles.data.bx = fill([handles.data.x(1),handles.data.x(1)+handles.data.l,...
     handles.data.x(1)+handles.data.l,handles.data.x(1),handles.data.x(1)],...
     [handles.data.w,handles.data.w,-handles.data.w,-handles.data.w,...
     handles.data.w],'k');
+handles.data.vplot = plot(handles.data.vx(1),handles.data.v(1));
+handles.data.vzero = plot([handles.data.axlim(1),handles.data.axlim(2)],...
+    [handles.data.RL,handles.data.RL]*3/2,'k--');
 axis(handles.mainAx,'equal');
 set(handles.mainAx,'XTickLabel',[],'YTickLabel',[],'XTick',[],'YTick',[],...
     'Xlim',handles.data.axlim(1:2),'Ylim',handles.data.axlim(3:4));
@@ -172,10 +183,18 @@ handles.data.x = handles.data.RL*cos(handles.data.th) + ...
     sqrt(1 - handles.data.RL^2*sin(handles.data.th).^2);
 tmp = max([handles.data.RL,handles.data.w]);
 handles.data.axlim = [-handles.data.RL,handles.data.RL+1+handles.data.l,...
-    -tmp,tmp]*1.1;
+    -tmp,tmp*2]*1.1;
+
+v = -handles.data.RL*sin(handles.data.th).*(1 + handles.data.RL*...
+    cos(handles.data.th)./sqrt(1 - handles.data.RL^2*sin(handles.data.th).^2));
+handles.data.v = repmat(v,1,5)/abs(max(v))*tmp/2+3*tmp/2;
+handles.data.vx = linspace(handles.data.axlim(1),handles.data.axlim(2),...
+    length(handles.data.v));
 
 % update plot
 set(handles.mainAx,'Xlim',handles.data.axlim(1:2),'Ylim',handles.data.axlim(3:4));
+set(handles.data.vzero,'XData',[handles.data.axlim(1),handles.data.axlim(2)],...
+        'YData',[tmp,tmp]*3/2)
 if ~handles.data.isPlaying
     set(handles.data.linkA,'XData',[0,handles.data.RL*cos(handles.data.th(handles.data.j))],...
         'YData',[0,handles.data.RL*sin(handles.data.th(handles.data.j))])
@@ -184,6 +203,8 @@ if ~handles.data.isPlaying
         [handles.data.RL*sin(handles.data.th(handles.data.j)),0])
     tmp = get(handles.data.bx,'XData');
     set(handles.data.bx,'XData',tmp+(handles.data.x(handles.data.j)-min(tmp)))
+    set(handles.data.vplot,'XData',handles.data.vx(1:handles.data.k),...
+        'YData',handles.data.v(1:handles.data.k))
 end
 
 guidata(hObject, handles);
@@ -192,11 +213,16 @@ function animSliderCrank_doAnim(hObject)
 
 handles = guidata(hObject);
 j = handles.data.j;
+k = handles.data.k;
 
 while handles.data.isPlaying
     j = j+1;
     if j > length(handles.data.th)
         j = 1;
+    end
+    k = k+1;
+    if k > length(handles.data.v)
+        k = 1;
     end
     
     set(handles.data.linkA,'XData',[0,handles.data.RL*cos(handles.data.th(j))],...
@@ -206,7 +232,8 @@ while handles.data.isPlaying
         [handles.data.RL*sin(handles.data.th(j)),0])
     tmp = get(handles.data.bx,'XData');
     set(handles.data.bx,'XData',tmp+(handles.data.x(j)-min(tmp)))
-    
+    set(handles.data.vplot,'XData',handles.data.vx(1:k),...
+        'YData',handles.data.v(1:k))
     drawnow
     pause(0.01);
     
@@ -216,6 +243,7 @@ end
 
 %update handles
 handles.data.j = j;
+handles.data.k = k;
 guidata(hObject,handles);
 
 
