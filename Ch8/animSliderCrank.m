@@ -1,5 +1,6 @@
 function varargout = animSliderCrank(varargin)
-% ANIMSLIDERCRANK Animate an elliptical orbit.   
+% ANIMSLIDERCRANK Animate a slider-crank mechanism and plot
+% the velocity of the piston.
 
 % Written by Dmitry Savransky with GUIDE v2.5 24-Feb-2009 13:40:29
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
