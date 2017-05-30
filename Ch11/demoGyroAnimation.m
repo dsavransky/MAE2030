@@ -44,23 +44,27 @@ Omega = 4*2*pi; %rotor spin rate 240 rpm-> rad/s
 I1p = I1 +M*l^2 + m*lp^2;  %moment of inertia about Q
 mG = m+M;                  %total mass
 lG = (M*l - m*lp)/mG;      %distance between axle and com
-h = I2*Omega;              %rotor angular momentum magnitude
+h0 = I2*Omega;             %rotor initial angular momentum magnitude
+
+z0 = [0,psid0,pi/6,0,h0];  %initial conditions
+C = I2*z0(2)*sin(z0(3)) + h0; %conserved quantity
 
 [t,res] = ode45(@demoGyro_eq,linspace(0,30,1000),...
-    [0,psid0,pi/6,0],odeset('RelTol',1e-12,'AbsTol',1e-12));
+    z0,odeset('RelTol',1e-12,'AbsTol',1e-12));
 
     function dz = demoGyro_eq(~,z)
         
-        %z = [psi, psidot, theta, thetadot]
+        %z = [psi, psidot, theta, thetadot, h]
         psid = z(2);
         th = z(3);
         thd = z(4);
         
-        thdd = (-mG*g*lG*cos(th) + h*psid*cos(th) - ...
-                (I1p - I2)*psid^2*sin(th)*cos(th))/I1p;
-        psidd = (-h*thd - (I2 - 2*I1p)*psid*thd*sin(th))/I1p/cos(th);
-        
-        dz = [psid;psidd;thd;thdd];
+        thdd = (C.*psid - I1p.*psid.^2.*sin(th) - mG.*g.*lG).*cos(th)./I1p;
+        psidd = thd.*(-C./cos(th) + 2*I1p.*psid.*tan(th))./I1p;
+        hd = -I2*(psidd.*sin(th) + psid.*thd.*cos(th));
+
+        dz = [psid;psidd;thd;thdd;hd];
+
     end
 
 %grab the angle histories
