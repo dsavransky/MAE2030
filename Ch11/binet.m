@@ -1,4 +1,4 @@
-% Script to generate the Poinsot Construction (Inertia Ellipsoind)
+% Script to generate the Binet Construction (Inertia Ellipsoid)
 % Figure 11.20, Example 11.17 
 %
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)

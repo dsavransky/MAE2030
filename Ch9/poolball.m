@@ -22,7 +22,8 @@ sphereeq = @(t,z) [z(2);-mu*g;z(4);5/2*mu/r*g];
 % set up figure
 figure(1)
 clf
-s = surface(r*X,r*Y,r*Z,'FaceAlpha',0.8,'SpecularExponent',10,'SpecularStrength',0.3);
+colormap('jet')
+s = surface(r*X,r*Y,r*Z,'FaceAlpha',0.9,'SpecularExponent',10,'SpecularStrength',0.2);
 l(1) = light('Position',[0 -100 1]);
 %l(2) = light('Position',[1.5 0.5 -0.5]);
 lighting gouraud

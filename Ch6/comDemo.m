@@ -19,6 +19,7 @@ set(1,'Position', [100,265,560,420])
 p1 = plot3(r0(1,:),r0(2,:),r0(3,:),'.');
 hold on
 G1 = plot3(rG(1),rG(2),rG(3),'k.','MarkerSize',30);
+tr1 = plot3(rG(1),rG(2),rG(3),'k--');
 hold off
 axis equal
 axis([-1,4,-1,4,-1,4])
@@ -30,6 +31,7 @@ set(2,'Position', [661,265,560,420])
 p2 = plot3(r0(1,:),r0(2,:),r0(3,:),'.');
 hold on
 G2 = plot3(rG(1),rG(2),rG(3),'k.','MarkerSize',30);
+tr2 = plot3(rG(1),rG(2),rG(3),'k--');
 hold off
 axis equal
 axis([-2,2,-2,2,-2,2])
@@ -44,14 +46,19 @@ for j = 1:150
     rG1 = sum(r1,2)/N;
     set(p1,'XData',r1(1,:),'YData',r1(2,:),'ZData',r1(3,:))
     set(G1,'XData',rG1(1),'YData',rG1(2),'ZData',rG1(3))
+    set(tr1,'XData',[get(tr1,'XData'),rG1(1)],...
+        'YData',[get(tr1,'YData'),rG1(2)],...
+        'ZData',[get(tr1,'ZData'),rG1(3)])
     
     v2 = randn(3,N);
-    r2 = r2+v2/30+repmat([cos(th(j+1))-cos(th(j));...
-        sin(th(j+1))-sin(th(j));0],1,N);
+    r2 = r2+v2/30+repmat([cos(th(j+1))-cos(th(j));sin(th(j+1))-sin(th(j));0],1,N);
     rG2 = sum(r2,2)/N;
     set(p2,'XData',r2(1,:),'YData',r2(2,:),'ZData',r2(3,:))
     set(G2,'XData',rG2(1),'YData',rG2(2),'ZData',rG2(3))
+    if j == 1, set(tr2,'XData',rG2(1),'YData',rG2(2),'ZData',rG2(3)); end
+    set(tr2,'XData',[get(tr2,'XData'),rG2(1)],...
+        'YData',[get(tr2,'YData'),rG2(2)],...
+        'ZData',[get(tr2,'ZData'),rG2(3)])
     
     pause(0.1)
 end
-

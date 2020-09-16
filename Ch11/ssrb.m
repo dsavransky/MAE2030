@@ -114,12 +114,12 @@ if strcmp(get(hObject,'Visible'),'off')
     text(handles.statelabelax,...
         'String','$\theta,\dot\theta,\psi,\dot\psi,\phi,\Omega=$',...
         'Interpreter','Latex','HorizontalAlignment','left',...
-        'VerticalAlignment','bottom','FontSize',14);
+        'VerticalAlignment','bottom','FontSize',18);
     
     %set up plot axis
     cla(handles.plotAx)
-    xlabel(handles.plotAx,'Time (s)','FontSize',14)
-    ylabel(handles.plotAx,'$\Omega$','Interpreter','Latex','FontSize',14)
+    xlabel(handles.plotAx,'Time (s)','FontSize',16)
+    ylabel(handles.plotAx,'$\Omega$','Interpreter','Latex','FontSize',16)
     hold(handles.plotAx,'on')
     
     
@@ -296,6 +296,7 @@ if ~isfield(handles,'s1') || ~ishandle(handles.s1)
     handles.b2cur = handles.rotMats{1}(th)*handles.b2cur;
         
     hold on
+    handles.e3 = quiver3(0,0,0,0,0,1.1,0,'Linewidth',2,'Color','k');
     handles.b2 = quiver3(0,0,0,handles.b2cur(1)*1.1,handles.b2cur(2)*1.1,...
         handles.b2cur(3)*1.1,0,'LineWidth',2);
     handles.b2trace = plot3(handles.b2cur(1)*1.1,handles.b2cur(2)*1.1,...
@@ -350,6 +351,7 @@ if strcmp(get(handles.runAnim,'String'),'Stop')
 end
 
 if ishandle(handles.s1), delete(handles.s1); end
+if ishandle(handles.e3), delete(handles.e3); end
 if ishandle(handles.b2), delete(handles.b2); end
 if ishandle(handles.b2trace), delete(handles.b2trace); end
 if ishandle(handles.Omegatrace), delete(handles.Omegatrace); end
