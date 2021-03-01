@@ -14,7 +14,7 @@ tin = [0,10];     %s      integration time span
 y0 = [pi/3,0];  %rad,rad/s    initial conditions
 
 
-    %simple pendulume ODE function
+    %simple pendulum ODE function
     function dy = simplePendulumODE(t,y)
         dy = [y(2);...
             -g/l*sin(y(1))];
