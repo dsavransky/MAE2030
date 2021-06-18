@@ -300,7 +300,7 @@ if ~isfield(handles,'s1') || ~ishandle(handles.s1)
     handles.b2 = quiver3(0,0,0,handles.b2cur(1)*1.1,handles.b2cur(2)*1.1,...
         handles.b2cur(3)*1.1,0,'LineWidth',2);
     handles.b2trace = plot3(handles.b2cur(1)*1.1,handles.b2cur(2)*1.1,...
-        handles.b2cur(3)*1.1,'-');
+        handles.b2cur(3)*1.1,'k-','Linewidth',2);
     hold off
     
     handles.Omegatrace = plot(handles.plotAx,0,handles.statevec(end));
@@ -316,7 +316,7 @@ else
     if ishandle(handles.b2trace), delete(handles.b2trace); end
     hold on
     handles.b2trace = plot3(handles.b2cur(1)*1.1,handles.b2cur(2)*1.1,...
-        handles.b2cur(3)*1.1,'-');
+        handles.b2cur(3)*1.1,'k-','Linewidth',2);
     hold off
 end
 axis([-1,1,-1,1,-1,1]*ceil(max(handles.dims)*11)/10)
