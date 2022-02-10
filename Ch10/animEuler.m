@@ -1,4 +1,4 @@
-function [coordSys,as] = animEuler(h,rotSet,angs)
+function [coordSys,as] = animEuler(h,rotSet,angs,axlabels)
 % animEuler animates sets of arbitrary Euler rotations. 
 % 
 % [coordSys,as] = animEuler(h,rotSet,angs) animates the rotation of a
@@ -33,7 +33,11 @@ function [coordSys,as] = animEuler(h,rotSet,angs)
 if ~exist('h','var') || isempty(h), h = 1; end
 if ~exist('rotSet','var') || isempty(rotSet), rotSet = [3,1,3]; end
 if ~exist('angs','var') || isempty(angs), angs = [45,30,60]; end
-
+if ~exist('axlabels','var') || isempty(axlabels)
+    for j = 1:3
+        axlabels{j} = ['$$\mathbf{\hat{b}}_',num2str(j),'$$'];
+    end
+end
 if length(rotSet) ~= 3 || length(angs) ~= 3
     error('rotSet and angs must be 3x1 arrays.');
 end
@@ -41,11 +45,11 @@ end
 %create axes and original orientation
 as = make3daxes(h);
 coordSys = eye(3);
-text(0,0.02,1,'$$\mathbf{e}_3$$','FontName','Times',...
+text(0,0.02,1,'$$\mathbf{\hat{e}}_3$$','FontName','Times',...
     'FontSize',24,'Interpreter','Latex')
-text(1,0.05,0,'$$\mathbf{e}_1$$','FontName','Times',...
+text(1,0.05,0,'$$\mathbf{\hat{e}}_1$$','FontName','Times',...
     'FontSize',24,'Interpreter','Latex')
-text(0,1,0,'$$\mathbf{e}_2$$','FontName','Times',...
+text(0,1,0,'$$\mathbf{\hat{e}}_2$$','FontName','Times',...
     'FontSize',24,'Interpreter','Latex',...
     'VerticalAlignment','Top','HorizontalAlignment','center')
 
@@ -67,6 +71,6 @@ end
 %label final axes
 for j =1:3
     text(coordSys(j,1)*1.05,coordSys(j,2)*1.05,coordSys(j,3)*1.05,...
-        ['$$\mathbf{b}_',num2str(j),'$$'],'FontName','Times',...
+        axlabels(j),'FontName','Times',...
         'FontSize',24,'Interpreter','Latex')
 end
