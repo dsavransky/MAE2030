@@ -31,14 +31,14 @@ set(2,'Position',[576,1,575,700])
         figure(h)
         clf
         subplot(2,1,1)
-        plot(t,thsho,t,theta,'--')
+        plot(t,thsho,t,theta,'--', 'LineWidth', 2)
         legend({'SHO Equations','Numerical Integration'})
         set(gca,'FontName','Times','FontSize',18)
         ylabel('$\theta$ (rad)','Interpreter','Latex')
         title(['$\theta(0) = $',num2str(y0(1)),...
             ', $\dot\theta(0) = $',num2str(y0(2))],'Interpreter','Latex');
         subplot(2,1,2)
-        plot(t,thdsho,t,thetad,'--')
+        plot(t,thdsho,t,thetad,'--', 'LineWidth', 2)
         set(gca,'FontName','Times','FontSize',18)
         xlabel('Time (s)','Interpreter','Latex')
         ylabel('$\dot\theta$ (rad/s)','Interpreter','Latex')
