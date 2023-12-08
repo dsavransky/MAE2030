@@ -1,3 +1,6 @@
+% Generate a plot of position and velocity trajectories for a forced 
+% 1-DOF system
+
 % define some arbitrary constants
 t = linspace(0,1,100);
 x0 = 1;
