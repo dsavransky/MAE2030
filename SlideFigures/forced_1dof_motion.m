@@ -32,7 +32,7 @@ title('Velocity')
 
 % create second horizontal subplot
 subplot(1,2,2);
-% plot the velocity trajectory
+% plot the position trajectory
 plot(t,x,'k','LineWidth',2)
 % set the axis font and font size
 set(gca,'FontName','Times','FontSize',18)

@@ -27,7 +27,9 @@ end
 
 % generate legend text
 lgtxt = cell(length(zetas),1);
-for j = 1:length(zetas), lgtxt{j} = sprintf('$\\zeta = %0.2f$', zetas(j));end
+for j = 1:length(zetas)
+    lgtxt{j} = sprintf('$\\zeta = %0.2f$', zetas(j));
+end
 
 % plot the results
 % set default line and color styles
