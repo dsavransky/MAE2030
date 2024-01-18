@@ -1,4 +1,4 @@
-function res = simplePendulumHWExample()
+function simplePendulumHWExample()
 % simplePendulumHWExample numerically integrates the equations of motion of
 % a simple pendulum and plots the results. Note that you can also split
 % this same code into two files - the integrator function and a script to
