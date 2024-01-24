@@ -46,6 +46,7 @@ ymax = max([0,max(r_po(:,2))])+maxr/10;
 
 %create and clear figure
 h = figure(1);
+h.Position = [168,1,1200,850];
 clf(h);
 
 % create a circle and a square:
