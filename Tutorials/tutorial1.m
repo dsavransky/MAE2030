@@ -18,6 +18,10 @@ z = x + y;
 % line's results.  You will almost always want to end lines with semicolons
 % in your code.
 
+% MATLAB is case-sensitive. x is NOT the same as X
+X = 5;
+x - X
+
 % All of the values above are scalars. MATLAB also allows you to create 
 % array (matrix) variables. 
 arr1 = [1,2,3];
@@ -50,7 +54,7 @@ t3 = 0:0.3:1;
 
 % Another very useful command is linspace, which produces a linearly spaced
 % list of numbers, similar to the colon operator:
-t3 = linspace(0, 1, 10);
+t4 = linspace(0, 1, 10);
 
 %% Array indexing
 
@@ -75,7 +79,7 @@ arr2(5)
 
 % for multi-dimensional arrays, you can index with a single value, or with
 % the number of values equivalent to the dimensionality of the array:
-M = [1 2 3; 4 5 6; 7 8 9];
+M = [1 2 3; 4 5 6; 7 8 9]
 M(2,2)
 M(2) %what happened??? When we use 1-D indexing, we go down columns first
 
@@ -127,7 +131,7 @@ tand(30)
 format long
 ans 
 % the output of any previous command not assigned to a variable is 
-% automatically assigne dto ans
+% automatically assigned to ans
 
 % inverse trigonometric functions are asin, acos, atan, asind, acosd, atand
 
@@ -154,6 +158,7 @@ arr1.^arr2
 exp(1) %natural exponent
 log(10) % natural logarithm
 log10(10) %base-10 logarithm
+sum(arr1) %compute the sum of an array
 
 % and finally, vector algebra:
 x = [1;2;3];
@@ -161,10 +166,89 @@ y = [4;5;6];
 
 dot(x,y)
 cross(x,y)
+norm(x)
 
 %% Boolean Operators
 
+% In addition to the standard arithmetic operators, MATLAB includes Boolean
+% operators for comparing values.  These operators return logical (boolean)
+% values: 1 (true) or 0 (false)
+
+x = 5;
+y = 10;
+
+x == y
+x > y
+x < y
+
+% booleans can be used to index arrays!  The indexing value must be an
+% array of the same dimensionality as the one you are indexing, and only
+% the indices that are true in the indexing array will be returned:
+
+arr1 = 1:5
+indexarr = [true, false, false, false, true]
+arr1(indexarr)
+
+% Question: What will happen when you run:
+arr1(arr1 <= 3)
 
 %% Flow Control
 
+% Flow control (or contro flow) refers to special instructions that cause
+% repeating or branching behaviors in your code. First, there's the if
+% statement:
+
+x = 5;
+if x < 3
+    disp("x is less than 3")
+else
+    disp("x is greater than or equal to 3")
+end
+
+% if statements can actually have multiple different conditions
+if x < 3
+    disp("x is less than 3")
+elseif x < 6
+    disp("x is less than 6")
+else
+    disp("x is greater than or equal to 6")
+end
+
+% note, however, that only the first matching statement is evaluted
+if x < 3
+    disp("x is less than 3")
+elseif x < 6
+    disp("x is less than 6")
+elseif x < 10
+    disp("x is less than 10")
+else
+    disp("x is greater than or equal to 10")
+end
+
+% Next, we have two kinds of loops: for and while.  for loops run for a
+% fixed number of iterations, whereas while loops run until a condition is
+% met.
+
+for j = 1:10
+    disp(j)
+end
+
+counter = 1;
+while counter < 11
+    disp(counter)
+    counter = counter + 1;
+end
+
+% Question: you wish to add up the numbers between 1 and 100.  What
+% MATLAB instruction(s) can you use to do this?
+
 %% Functions and scripts
+
+% This tutorial is an example of a MATLAB script.  Running it is equivalent
+% to running all of the commands inside it directly in the MATLAB
+% workspace. It takes not inputs, but can populate one or more outputs to
+% the workspace.  
+
+% Functions differ from scripts in that they can take inputs and return
+% only specified outputs.  They also create their own scope.  To learn
+% more, proceed to tutorial2.
