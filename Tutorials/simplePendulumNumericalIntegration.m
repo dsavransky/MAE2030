@@ -17,8 +17,8 @@ g = 9.81;   %m/s^2  acceleration due to graivty
 
     %simple pendulum ODE function
     %state defined as z = [\theta; \dot\theta]
-    function dy = simplePendulumODE(t,z)
-        dy = [z(2);...
+    function dz = simplePendulumODE(t,z)
+        dz = [z(2);...
             -g/l*sin(z(1))];
     end
 
