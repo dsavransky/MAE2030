@@ -14,7 +14,7 @@ g = 9.81;   %m/s^2  acceleration due to graivty
         dz = [z(2); 0; z(4); -g];
     end
 
-    function [value,isterminal,direction] = article_in_gravity_event(~,z)
+    function [value,isterminal,direction] = particle_in_gravity_event(~,z)
         %z = [x,xdot,y,ydot]
         % this will be zero when the mass has a height of 0:
         value = z(3); 
@@ -24,7 +24,7 @@ g = 9.81;   %m/s^2  acceleration due to graivty
     end
 
 % set options
-options = odeset('events',@article_in_gravity_event);
+options = odeset('events',@particle_in_gravity_event);
 [t,z,te,ze] = ode45(@particle_in_gravity_eom,0:0.1:100,z0,options);
 
 x = z(:,1);
