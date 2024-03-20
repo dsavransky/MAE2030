@@ -13,11 +13,11 @@ function [T,Y] = cartPendulumAnimation(t,y0,doanim)
 %
 % Examples:
 %   %Cart starts at rest, pendulum inverted at 45 degrees:
-%   [T,Y] = cartPendulumAnimation([0,15],[0,0,pi/4,0],true);
+%   [T,Y] = cartPendulumAnimation([0:1/40:15],[0,0,pi/4,0],true);
 %   %Cart starts at rest, pendulum hanging down at 45 degrees:
-%   [T,Y] = cartPendulumAnimation([0,15],[0,0,-pi/4,0],true);
+%   [T,Y] = cartPendulumAnimation([0:1/40:15],[0,0,-pi/4,0],true);
 %   %Cart starts at rest, pendulum pointing straight up:
-%   [T,Y] = cartPendulumAnimation([0,15],[0,0,pi/2,0],true);
+%   [T,Y] = cartPendulumAnimation([0:1/40:15],[0,0,pi/2,0],true);
 
 
 
@@ -53,7 +53,10 @@ end
               
     end
 
-[T,Y] = ode45(@cartPendulumODE,t,y0,odeset('RelTol',1e-6,'AbsTol',1e-9));
+[T,Y] = ode45(@cartPendulumODE,t,y0);
+%[T,Y] = ode45(@cartPendulumODE,t,y0,odeset('RelTol',1e-6,'AbsTol',1e-9));
+%[T,Y] = ode45(@cartPendulumODE,t,y0,odeset('RelTol',1e-16,'AbsTol',1e-16));
+%[T,Y] = ode89(@cartPendulumODE,t,y0,odeset('RelTol',1e-16,'AbsTol',1e-16));
 
 if doanim
     x = Y(:,1);
