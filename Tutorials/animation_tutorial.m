@@ -12,6 +12,7 @@ y = sin(t*20/2/pi);
 
 figure(1)
 clf
+j = 1
 plot(t(j),y(j), 'b.', 'MarkerSize',60)
 xlim([min(t),max(t)])
 ylim([min(y),max(y)])
