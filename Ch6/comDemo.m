@@ -15,10 +15,11 @@ rG = sum(r0,2)/N;
 
 figure(1)
 clf
-set(1,'Position', [100,265,560,420])
-p1 = plot3(r0(1,:),r0(2,:),r0(3,:),'.');
+set(1,'Position', [24,124,1140, 970])
+p1 = scatter3(r0(1,:),r0(2,:),r0(3,:),30,'MarkerFaceColor','b');
+p1.MarkerFaceAlpha=0.25;
 hold on
-G1 = plot3(rG(1),rG(2),rG(3),'k.','MarkerSize',30);
+G1 = plot3(rG(1),rG(2),rG(3),'k.','MarkerSize',60);
 tr1 = plot3(rG(1),rG(2),rG(3),'k--');
 hold off
 axis equal
@@ -27,10 +28,11 @@ grid on
 
 figure(2)
 clf
-set(2,'Position', [661,265,560,420])
-p2 = plot3(r0(1,:),r0(2,:),r0(3,:),'.');
+set(2,'Position', [1170,124,1140, 970])
+p2 = scatter3(r0(1,:),r0(2,:),r0(3,:),30,'MarkerFaceColor','b');
+p2.MarkerFaceAlpha=0.25;
 hold on
-G2 = plot3(rG(1),rG(2),rG(3),'k.','MarkerSize',30);
+G2 = plot3(rG(1),rG(2),rG(3),'k.','MarkerSize',60);
 tr2 = plot3(rG(1),rG(2),rG(3),'k--');
 hold off
 axis equal
