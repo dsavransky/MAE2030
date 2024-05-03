@@ -14,8 +14,8 @@ T = 1;
 %make the ellipsoid
 [xe,ye,ze]=ellipsoid(0,0,0,sqrt(2*T/I(1)),sqrt(2*T/I(2)),...
     sqrt(2*T/I(3)),100);
-s1 = surface(xe,ye,ze,'FaceAlpha',0.8,'SpecularExponent',10,...
-    'SpecularStrength',0.3);
+s1 = surface(xe,ye,ze,'FaceAlpha',0.8,'SpecularExponent',1,...
+    'SpecularStrength',0.5,'AmbientStrength',1,'DiffuseStrength',1);
 hold on
 %set up lighting
 l(1) = light('Position',[0 1.5 0]);
@@ -33,9 +33,9 @@ plot3([0 2],[0 0],[0,0],'Linewidth',2,'Color',pc)
 plot3([0 0],[0 2],[0,0],'Linewidth',2,'Color',pc)
 plot3([0 0],[0 0],[0,1.5],'Linewidth',2,'Color',pc)
 set(gca,'Visible','off')
-text(1.9,0,0,'I_1','FontName','Times','FontSize',14)
-text(0.05,2.18,0,'I_2','FontName','Times','FontSize',14)
-text(0.02,0,1.55,'I_3','FontName','Times','FontSize',14)
+text(2.2,0,0,'$I_1$','FontName','Times','FontSize',18,'Interpreter','latex')
+text(0.05,2.18,0,'$I_2$','FontName','Times','FontSize',18,'Interpreter','latex')
+text(0.05,0,1.6,'$I_3$','FontName','Times','FontSize',18,'Interpreter','latex')
 
 %define angular momenta of polhodes - one at the critical point, two above
 %and two below
