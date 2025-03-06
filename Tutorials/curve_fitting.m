@@ -1,3 +1,16 @@
+% Demonstration of use of the curve fitting toolbox fit function
+%
+% NOTE: As of March 2025, there appears to be a critical issue with the fit
+% function when running on Apple Silicon macs.  The observed behavior is
+% that the call to the fit function ramps CPU usage to 100% on all cores,
+% and then runs for an unreasonable long time.  There is not yet a fix, but
+% a partial workaround is to execute (in MATLAB):
+%
+% >> maxNumCompThreads(1)
+%
+% This will avoid maxing out CPU and will generate results more quickly
+% (although it will still take a while). 
+
 % generate some fake data
 x = linspace(0, 10,10000);
 y = sin(x*20/2/pi);
