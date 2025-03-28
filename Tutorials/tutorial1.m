@@ -246,7 +246,7 @@ end
 
 % This tutorial is an example of a MATLAB script.  Running it is equivalent
 % to running all of the commands inside it directly in the MATLAB
-% workspace. It takes not inputs, but can populate one or more outputs to
+% workspace. It takes no inputs, but can populate one or more outputs to
 % the workspace.  
 
 % Functions differ from scripts in that they can take inputs and return

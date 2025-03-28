@@ -40,7 +40,7 @@ end
             -2*rd*thd/r - g*sin(th)/r];
     end
 
-[~,res] = ode45(@springPendulumODE,t,y0);
+[~,res] = ode45(@springPendulumODE,t,y0,odeset('RelTol',1e-12,'AbsTol',1e-14));
 
 if doanim
     r = res(:,1);

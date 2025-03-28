@@ -24,5 +24,4 @@ g = 9.81;   %m/s^2  acceleration due to graivty
 
 [t,z] = ode45(@simplePendulumODE,tspan,z0);
 
-
 end
