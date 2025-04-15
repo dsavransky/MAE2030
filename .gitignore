@@ -93,3 +93,4 @@ ENV/
 *.asv
 
 .DS_Store
+.*.swp
