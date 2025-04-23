@@ -1,5 +1,5 @@
 function [rotor,axle,gimbalaxle,frameaxle,ogimbal,igimbal,frame,l] = ...
-    createGyro(h)
+    createGyro(h, frameon)
 % createGyro generates graphics objects simulating a 3-axis gimbaled 
 % gyroscope suitable for use in animation.
 % 
@@ -12,6 +12,7 @@ function [rotor,axle,gimbalaxle,frameaxle,ogimbal,igimbal,frame,l] = ...
 
 %if no inputs given
 if ~exist('h','var') || isempty(h), h = 1; end
+if ~exist('frameon','var') || isempty(frameon), frameon = true; end
 
 cs = colormap('Gray');
 inds = round(linspace(length(cs)*0.3,length(cs)/1.5,4));
@@ -75,6 +76,9 @@ set(frame(2),'ZData',get(frame(2),'ZData')-y)
 rotate(frame(3:4),[1 0 0], 90, [0 0 0])
 set(frame(3),'YData',get(frame(3),'YData')-y)
 set(frame(4),'YData',get(frame(4),'YData')+y)
+if ~frameon
+    set(frame, 'Visible', 'off')
+end
 
 view(135,10)
 axis equal
