@@ -17,7 +17,7 @@ The codes are split into chapter directories that (somewhat roughly) match the c
 
 For static views of the Jupyter Notebooks go to http://nbviewer.jupyter.org/github/dsavransky/MAE2030/blob/main/Notebooks/ 
 
-If you wish to execute these notebooks, you will need Python >= 3.9 and Jupyer (see https://jupyter.org/install).  You will also need the `sympy` and `sympyhelpers` pacakges.  You can install both by running:
+If you wish to execute these notebooks, you will need Python >= 3.9 and Jupyer (see https://jupyter.org/install).  You will also need the `sympy` and `sympyhelpers` packages.  You can install both by running:
 
 ```
 pip install sympyhelpers
