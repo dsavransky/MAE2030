@@ -30,12 +30,16 @@ slota = (l-d)*[cos(th1s), sin(th1s)];
 slotb = (l+d)*[cos(th1s), sin(th1s)];
 A = (l+d+0.1)*[cos(th1s), sin(th1s)];
 
-figure(1)
-clf
-set(1, 'Position', [1000, 581, 560, 630])
+% create figure and subplots
+fnum = sum(double('sliding')); % somewhat unique fig number
+if ishandle(fnum)
+    close(fnum)
+end
+f = figure(fnum);
+f.Position = f.Position.*[1,1,1,1.5];
+
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);
-
 ax1.Position = [0.05   0.35    0.9    0.6];
 ax2.Position = [0.125 0.075, 0.8, 0.25];
 
@@ -48,10 +52,13 @@ slot = plot([slota(1,1), slotb(1,1)], [slota(1,2), slotb(1,2)], 'w', 'LineWidth'
 linkB = plot([Op(1,1), P(1,1)], [Op(1,2), P(1,2)], 'b', 'LineWidth', 10);
 Ppoint = plot(P(1,1), P(1,2), 'k.', 'MarkerSize', 50);
 plot(O(1,1), O(1,2), 'k.',Op(1,1), Op(1,2), 'k.', 'MarkerSize', 50);
+axis equal 
 
 % find axis limits
 tmp = [min([O;Op;P;A]);max([O;Op;P;A])];
 axis(tmp(:))
+
+% remove axis labels
 set(ax1,'XTick',[], 'YTick',[])
 
 % now set up r vs time plot
