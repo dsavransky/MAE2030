@@ -11,7 +11,7 @@ function [coordSys,as] = animEuler(h,rotSet,angs,axlabels)
 %
 % The function returns the matrix coordSys, representing the direction
 % cosine matrix of the Euler angle set, and the array (as), containing the
-% handles of the three surfact objects representing the axes.
+% handles of the three surface objects representing the axes.
 %
 % Note: If called with no arguments, this function will animate a 3-1-3
 % rotation using angles 45,30,60 in figure 1. These defaults will also be

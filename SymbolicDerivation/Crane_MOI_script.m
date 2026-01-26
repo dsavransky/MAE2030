@@ -9,7 +9,7 @@
 % and frames $\mathcal{B}$ and $\mathcal{C}$ that rotate with the rods, with the 
 % first component of each pointing along the rod length.
 % 
-% As usual, we start by defning all the required symbols
+% As usual, we start by defining all the required symbols
 
 syms M h m_1 m_2 l_1 l_2 'positive'
 syms theta_1 theta_2 'real'

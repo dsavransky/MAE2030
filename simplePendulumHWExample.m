@@ -6,7 +6,7 @@ function simplePendulumHWExample()
 %
 % A. Student.  HW #0
 
-g = 9.81;   %m/s^2  acceleration due to graivty
+g = 9.81;   %m/s^2  acceleration due to gravity
 l = 1;      %m      length of pendulum arm
 m = 1;      %kg     mass of pendulum bob
 

@@ -8,7 +8,7 @@
 % $m$ with arm length given by  $r$. The spring has constant $k$ and rest length 
 % $l_0$.  We will use an inertial frame $\mathcal{I} = (O,\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$ 
 % with $\mathbf{e}_1$ pointing in the direction of the gravity force (i.e., downwards) 
-% and $O$ being the pendulum's attchment point, and polar frame: $\mathcal{B} 
+% and $O$ being the pendulum's attachment point, and polar frame: $\mathcal{B} 
 % = (O,\mathbf{e}_r,\mathbf{e}_\theta, \mathbf{e}_3)$, with $\mathbf{e}_r$ pointing 
 % along the direction of the pendulum arm at an angle $\theta$ from $\mathbf{e}_1$(so 
 % that when $\theta = 0$, the pendulum is hanging straight down). 
