@@ -4,6 +4,9 @@
 % will be ignored.  You can place it at the start of a line for long
 % comments, or in the middle of a line for short comments following code. 
 
+% MATLAB does not care about whitespace.  You can indent any line by any
+% amount and it will execute as if there was no leading whitespace. 
+
 %% Variables
 % A variable is a piece of information.  Variables have 'types' (what kind
 % of information is being stored).  MATLAB is weakly typed - you don't have
@@ -26,6 +29,7 @@ x - X
 % array (matrix) variables. 
 arr1 = [1,2,3];
 arr2 = [4;5;6];
+
 % commas separate elements of an array in a column, semicolons start a new
 % row. You can use both to define matrices:
 M = [-1, 0, -2; 1, 2, 0];
@@ -41,7 +45,8 @@ help length
 
 % You can actually skip the commas and just use spaces:
 arr3 = [7 8 9];
-% However, you may want to include the commas for clarity
+% However, you typically want to include the commas for clarity and to
+% avoid errors
 
 % You can also use colons to create an ordered list of numbers
 % The syntax is start:increment:stop. Skipping the increment defaults it to
@@ -60,7 +65,7 @@ t4 = linspace(0, 1, 10);
 
 % You can always extract elements from an array (or matrix).  This is known
 % as array indexing.  MATLAB uses 1-based indexing, meaning that the first
-% index is 1 (other languages, including Pythong, start with 0).  Be
+% index is 1 (other languages, including Python, start with 0).  Be
 % careful, this is a frequent source of errors.
 
 % to index a 1-D array (regardless of whether it is a column or row), you
@@ -100,7 +105,7 @@ B(1,1) = 1
 B(2, 3) = 2
 B(4, 1:3) = 3
 
-% The .' operator is the transpose (' by itself is conjugate trasnpose):
+% The .' operator is the transpose (' by itself is conjugate transpose):
 arr2.'
 
 %% Math
@@ -127,7 +132,7 @@ cosd(60)
 sind(45)
 tand(30)
 
-% what if we want more sig figs?
+% what if we want more significant figures?
 format long
 ans 
 % the output of any previous command not assigned to a variable is 
@@ -194,7 +199,7 @@ arr1(arr1 <= 3)
 
 %% Flow Control
 
-% Flow control (or contro flow) refers to special instructions that cause
+% Flow control (or control flow) refers to special instructions that cause
 % repeating or branching behaviors in your code. First, there's the if
 % statement:
 
@@ -203,7 +208,7 @@ if x < 3
     disp("x is less than 3")
 else
     disp("x is greater than or equal to 3")
-end
+end % you must terminate an if/else statement with an end statement
 
 % if statements can actually have multiple different conditions
 if x < 3
@@ -214,7 +219,7 @@ else
     disp("x is greater than or equal to 6")
 end
 
-% note, however, that only the first matching statement is evaluted
+% note, however, that only the first matching statement is evaluated
 if x < 3
     disp("x is less than 3")
 elseif x < 6
@@ -229,10 +234,12 @@ end
 % fixed number of iterations, whereas while loops run until a condition is
 % met.
 
-for j = 1:10
-    disp(j)
-end
+% in a for loop, we assign an array of values directly to the loop variable
+for j = linspace(1,5,10)
+    disp(j) % disp prints outputs to the screen
+end % you must terminate any loop with an end statement
 
+% a while loop executes while a logical statement evaluates to true
 counter = 1;
 while counter < 11
     disp(counter)

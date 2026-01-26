@@ -5,7 +5,7 @@
 % line and scatter plots in 2D can be generated via the plot function
 
 % the figure command creates a figure. if omitted, the last used figure
-% will be re-used. If not figure exists, a new one will be created
+% will be re-used. If no figure exists, a new one will be created
 % automatically on the first plot command
 figure(1) 
 clf % this clears any existing content in the figure
@@ -29,8 +29,8 @@ hold on % save previous plot content
 plot(x, y.^2)
 hold off % clear previous plot content upon next plot command
 
-% Note that MATLAB's hold behavior is opposite of Python's matplotlib
-% hold is off by default
+% Note that MATLAB's hold behavior is opposite of Python's matplotlib:
+% In MATLAB, hold is off by default
 
 % curves can be customized with colors, linestyles and symbols
 help plot
