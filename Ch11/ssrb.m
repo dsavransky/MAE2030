@@ -5,11 +5,11 @@ function varargout = ssrb(varargin)
 %      
 %      The main axis displays the body, the current orientation of the
 %      body symmetry (spin) axis and a trace of the path taken by the spin
-%      axis in inertia space.  The axis can be roated at any time in 3
+%      axis in inertia space.  The axis can be rotated at any time in 3
 %      dimensions to better explore the visualization.
 %
 %      The second axis display a trace of the current spin rate (Omega).
-%      The texbox shows the value of the initial state vector, where psi is
+%      The textbox shows the value of the initial state vector, where psi is
 %      the rotation about the inertial vertical axis (e_3), theta is the
 %      rotation about the body transverse axis (b_1), and phi is rotation
 %      about the body symmetry axis (such that Omega-the spin rate-is the
@@ -18,7 +18,7 @@ function varargout = ssrb(varargin)
 %      user to select a new initial integration state.
 %
 %      The first slider controls the ratio of the the moment of inertia
-%      about the non-symmetry body axes (I_1) to the mometn of inertia
+%      about the non-symmetry body axes (I_1) to the moment of inertia
 %      about the symmetry axis (I_2).  Values of I1/I2 greater than 1 make
 %      the body a minor axis spinner.
 %

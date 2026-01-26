@@ -289,7 +289,7 @@ r1 = [handles.vals.l1*cos(th1),...
 r2 = [handles.vals.l1*cos(th1)+handles.vals.l2*cos(th2),...
       handles.vals.l1*sin(th1)-handles.vals.l2*sin(th2)];
 
-%set gloabl values
+%set global values
 handles.res.t = t;
 handles.res.z = z;
 handles.stopAnim = false;

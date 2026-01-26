@@ -1,7 +1,7 @@
 function [t,res] = demoGyro()
 
 % demoGyroAnimation numerically integrates the equations of 
-% motion of the demo gryoscope (Kasdin & Paley Ex. 11.13) and plots the
+% motion of the demo gyroscope (Kasdin & Paley Ex. 11.13) and plots the
 % conserved quantity.
 
 % Copyright (c) 2017 Dmitry Savransky (ds264@cornell.edu)

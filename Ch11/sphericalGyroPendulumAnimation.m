@@ -10,7 +10,7 @@ function [t,res] = sphericalGyroPendulumAnimation(staticic,nospin)
 % as a normal spherical pendulum).
 %
 % Setting both conditions to true will animate the static spherical
-% pendulum solution with ciruclar motion about the vertical axis.
+% pendulum solution with circular motion about the vertical axis.
 %
 % See Example 11.2
 

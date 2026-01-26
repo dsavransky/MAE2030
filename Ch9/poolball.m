@@ -33,7 +33,7 @@ axis equal
 axis([z(1,1)-3*r,z(1,1)+3*r,-r,r,-r,r])
 %axis([-r,z(end,1)+r,-r,r,-r,r])
 
-%% aninmate
+%% animate
 
 for j = 2:length(t)
     axis([z(j,1)-3*r,z(j,1)+3*r,-r,r,-r,r])

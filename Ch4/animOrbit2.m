@@ -36,7 +36,7 @@ function animOrbit2_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for animOrbit2
 handles.output = hObject;
 
-%set intial data set
+%set initial data set
 handles.data.isPlaying = false;
 handles.data.e = get(handles.e_slider,'Value');
 set(handles.eccen,'String',num2str(handles.data.e))

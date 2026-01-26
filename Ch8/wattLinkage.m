@@ -7,10 +7,10 @@ function [t,z,r_PO] = wattLinkage(n,npathpoints,lengths,omega)
 % the system over n cycles (one cycle is defined as a full sweep top to
 % bottom - 10 by default).  npathpoints determines the number of trajectory 
 % points to plot (Inf by default, for all).  lengths is an optional 3 
-% element array of inkage lengths ([3,1,3] by default).  
+% element array of linkage lengths ([3,1,3] by default).  
 % omega is the angular rate in radians per second (0.5 by default).  
 %
-% The returned values are the intergrator outputs (t and z) and the 
+% The returned values are the integrator outputs (t and z) and the 
 % position of the center of the intermediate bar.
 % 
 % Example  

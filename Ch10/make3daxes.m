@@ -1,7 +1,7 @@
 function as = make3daxes(h)
 % make3daxes creates a dextral set of coordinate axes for animation.
 % 
-% as = make3daxes returns an array (as) continaing handles to three surface
+% as = make3daxes returns an array (as) containing handles to three surface
 % objects created in figure h representing the unit vectors of a dextral
 % reference frame.
 %

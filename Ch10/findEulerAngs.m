@@ -41,7 +41,7 @@ function varargout = findEulerAngs(varargin)
 
 % Written by Dmitry Savransky 21-Apr-2011 dsavrans@princeton.edu
 % 5-May-2011 Added Space rotations
-% 01-Jan-2012 Offloaded backedn to calcEulerAngs
+% 01-Jan-2012 Offloaded backend to calcEulerAngs
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
@@ -154,7 +154,7 @@ if handles.newRot
             %update coordinate system
             handles.coordSys = handles.rotMats{handles.prevRot(1,j)}(-handles.prevRot(2,j))*handles.coordSys;
         else
-            %previous rotaton was space
+            %previous rotation was space
             findEulerAngs_rot3daxes(handles,handles.coordSys0(handles.prevRot(1,j),:),...
                 -handles.prevRot(2,j)*180/pi,1);  
         end

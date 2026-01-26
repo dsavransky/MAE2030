@@ -18,7 +18,7 @@
 % and coordinates, but performing the calculations in slightly different ways.
 %% Method 1: Letting MATLAB do all of the derivatives for us.
 % This method involves defining some variables as time varying, but then requires 
-% us to explicitly subsitute for derivative quantities in later algebraic steps.
+% us to explicitly substitute for derivative quantities in later algebraic steps.
 % 
 % First define all of the symbolic variables we will require:
 
@@ -41,7 +41,7 @@ iWb = [0;0;diff(theta,t)]
 v_PO_B = diff(r_PO_B,t) + cross(iWb,r_PO_B)
 a_PO_B = diff(v_PO_B,t) + cross(iWb,v_PO_B)
 %% 
-% Now we calculate the forces. Remeber:
+% Now we calculate the forces. Remember:
 % 
 % $$\mathbf F_g = mg \mathbf{e}_1\\ \mathbf{F}_s = -k(r-l_0)\mathbf{e}_r$$
 
@@ -60,7 +60,7 @@ eom = m*a_PO_B == F_g_B + F_s_B
 %% 
 % And finally, solve for the second derivatives of our variables.  Note:  
 % as of 2016b, MATLAB cannot handle solving for a function of another variable. 
-% This will likely change in subsequent releases. For now, we subsititute dummy 
+% This will likely change in subsequent releases. For now, we substitute dummy 
 % variables for the second derivatives:
 
 syms rr th rd thd rdd thdd

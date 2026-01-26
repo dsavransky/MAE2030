@@ -14,7 +14,7 @@ function accelPendulumAnimation(stationary,t,y0)
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
-g = 9.81;   %m/s^2  acceleration due to graivty
+g = 9.81;   %m/s^2  acceleration due to gravity
 l = 1;      %m      length of pendulum arm
 a = 15;     %m/s^2  acceleration of the pendulum frame
 
@@ -31,7 +31,7 @@ if stationary
     y0 = [-atan(a/g),0];
 end
 
-    %simple pendulume ODE function
+    %simple pendulum ODE function
     function dy = simplePendulumODE(t,y)
         dy = [y(2);...
             -g/l*sin(y(1))];

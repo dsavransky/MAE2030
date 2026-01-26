@@ -53,7 +53,7 @@ I_O_m2_A = simplify(I_G2_m2_A + m_2*((transpose(r_O_G2)*r_O_G2)*eye(3) - r_O_G2*
 I_O_A = simplify(I_O_cab_A + I_O_m1_A + I_O_m2_A)
 %% 
 % Finally, if we wished to find the principal axis frame and fully diagonal 
-% matrix of inertia, we just need to do an eignedecomposition of the MOI matrix 
+% matrix of inertia, we just need to do an eigendecomposition of the MOI matrix 
 % we just derived.  The eigenvalues will be the elements of the diagonal of the 
 % principal axis moments, and the eigenvectors will form a DCM that rotates from 
 % frame $\mathcal A$ into the principal axis frame.
