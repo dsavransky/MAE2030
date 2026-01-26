@@ -16,9 +16,9 @@ out2 = in1 - in2;
 out3 = tutorial2_subfunction1(in1);
 
 
-    % this is a nested subfunction.  it has access to all of the data
+    % this is a nested function.  it has access to all of the data
     % available to its parent function, but the parent function can only
-    % access variables defined in the subfunction if they are returned
+    % access variables defined in the nested function if they are returned
     function out = tutorial2_subfunction1(in)
         internal_variable = in.*in1;
         out = 2*internal_variable;
