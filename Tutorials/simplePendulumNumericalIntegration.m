@@ -13,7 +13,7 @@ function [t,z] = simplePendulumNumericalIntegration(tspan, z0, l)
 %            ode45 documentation for details. 
 
 % constants
-g = 9.81;   %m/s^2  acceleration due to graivty
+g = 9.81;   %m/s^2  acceleration due to gravity
 
     %simple pendulum ODE function
     %state defined as z = [\theta; \dot\theta]

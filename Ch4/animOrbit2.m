@@ -194,7 +194,7 @@ if handles.data.e > 0
     del = 1;
     E = M./(1-e);
     inds = E > sqrt(6*(1-e)./e);
-    if length(e) == 1
+    if isscalar(e)
         einds = 1;
     else
         einds = inds;

@@ -12,7 +12,7 @@ if ~exist('e','var') || isempty(e)
 end
 
 %define constants
-g = 9.81;   %m/s^2  acceleration due to graivty
+g = 9.81;   %m/s^2  acceleration due to gravity
 
     function dz = particle_in_gravity_eom(~,z)
         %z = [x,xdot,y,ydot]

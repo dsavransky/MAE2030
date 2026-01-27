@@ -22,7 +22,7 @@ if ~exist('mq','var'), mq = 4; end
 if ~exist('l1','var'), l1 = 1; end
 if ~exist('l2','var'), l2 = 0.75; end
 
-g=9.81; %m/s^2  acceleration due to gravity
+g = 9.81; %m/s^2  acceleration due to gravity
 mup = mp/(mq+mp);  
 muq = mq/(mq+mp);
 

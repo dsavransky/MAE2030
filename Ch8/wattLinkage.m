@@ -63,7 +63,7 @@ h = l2/5;
 s1 = [0,h/2,-h/2 0;0,-h,-h,0];
 s2 = [s1(1,:)+l1+l3;s1(2,:)-l2];
 
-%findmaximum axis area
+%find maximum axis area
 ax = [ min([-h/2,0;r_B;r_C]), max([l1+l3+h/2,0;r_B;r_C])];
 ax = ax([1,3,2,4]);
 ax(3:4) = ax(3:4)*1.05;

@@ -13,20 +13,20 @@ function [out1, out2, out3, out4] = tutorial2(in1, in2)
 out1 = in1 + in2;
 out2 = in1 - in2;
 
-out3 = tutorial2_subfunction1(in1);
+out3 = tutorial2_nested_function1(in1);
 
 
     % this is a nested function.  it has access to all of the data
     % available to its parent function, but the parent function can only
     % access variables defined in the nested function if they are returned
-    function out = tutorial2_subfunction1(in)
+    function out = tutorial2_nested_function1(in)
         internal_variable = in.*in1;
         out = 2*internal_variable;
     end
 
 
-out4 = tutorial2_subfunction1(in2);
-% note that we can use our subfunction before or after it is defined.
+out4 = tutorial2_nested_function1(in2);
+% note that we can use our nested function before or after it is defined.
 
 end 
 % even though MATLAB does not strictly require that functions have an end 

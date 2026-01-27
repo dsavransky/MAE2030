@@ -35,7 +35,7 @@ function animSliderCrank_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for animSliderCrank
 handles.output = hObject;
 
-%set intial data set
+%set initial data set
 handles.data.isPlaying = false;
 handles.data.RL = get(handles.RL_slider,'Value');
 set(handles.RL,'String',num2str(handles.data.RL))
