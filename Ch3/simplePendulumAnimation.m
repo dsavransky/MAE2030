@@ -11,7 +11,7 @@ function res = simplePendulumAnimation(t,y0,doanim)
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
-g = 9.81;   %m/s^2  acceleration due to graivty
+g = 9.81;   %m/s^2  acceleration due to gravity
 l = 1;      %m      length of pendulum arm
 
 if ~exist('t','var') || isempty(t)

@@ -11,7 +11,7 @@ function res = springPendulumAnimation(t,y0,doanim)
 
 %spring pendulum Animation
 %state y = [r, rd, th,thd]
-g = 9.81;   %m/s^2  acceleration due to graivty
+g = 9.81;   %m/s^2  acceleration due to gravity
 x0 = 0.1;   %m      spring rest length
 m = 0.1;      %kg     pendulum mass
 k = 2;      %N/m    spring constant
