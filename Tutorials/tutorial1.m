@@ -30,8 +30,8 @@ x - X
 arr1 = [1,2,3];
 arr2 = [4;5;6];
 
-% commas separate elements of an array in a column, semicolons start a new
-% row. You can use both to define matrices:
+% commas separate elements of an array within a row (into columns),
+% semicolons start a new row. You can use both to define matrices:
 M = [-1, 0, -2; 1, 2, 0];
 % Question: what will be the dimensionality of this matrix?
 
