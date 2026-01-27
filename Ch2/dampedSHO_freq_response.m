@@ -1,7 +1,7 @@
 function dampedSHO_freq_response(z)
 % dampedSHO_freq_response draws an annotated plot of the frequency response
 % curve for a damped simple harmonic oscillator. The free parameter z
-% represents the damping coefficient, set to a value of 0.2 by default
+% represents the damping ratio, set to a value of 0.2 by default
 
 % Copyright (c) 2016 Dmitry Savransky (ds264@cornell.edu)
 
