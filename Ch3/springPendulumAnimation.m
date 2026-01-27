@@ -26,7 +26,7 @@ if ~exist('doanim','var') || isempty(doanim)
     doanim = true;
 end
 
-%spring pendulume ODE function
+%spring pendulum ODE function
     function dy = springPendulumODE(t,y)
         %y = [r, rd, th,thd]
         r   = y(1);

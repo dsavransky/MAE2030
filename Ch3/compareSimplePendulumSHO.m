@@ -7,7 +7,7 @@ function compareSimplePendulumSHO
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
-g = 9.81;           %m/s^2  acceleration due to graivty
+g = 9.81;           %m/s^2  acceleration due to gravity
 l = 1;              %m      length of pendulum arm
 w0 = sqrt(g/l);     %natural frequency of linearized equations
 

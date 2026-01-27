@@ -24,7 +24,7 @@ if ~exist('doanim','var') || isempty(doanim)
     doanim = true;
 end
 
-%simple pendulume ODE function
+%simple pendulum ODE function
     function dy = simplePendulumODE(t,y)
         dy = [y(2);...
             -g/l*sin(y(1))];

@@ -8,7 +8,7 @@ function varargout = ssrb(varargin)
 %      axis in inertia space.  The axis can be rotated at any time in 3
 %      dimensions to better explore the visualization.
 %
-%      The second axis display a trace of the current spin rate (Omega).
+%      The second axis displays a trace of the current spin rate (Omega).
 %      The textbox shows the value of the initial state vector, where psi is
 %      the rotation about the inertial vertical axis (e_3), theta is the
 %      rotation about the body transverse axis (b_1), and phi is rotation
