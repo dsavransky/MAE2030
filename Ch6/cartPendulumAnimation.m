@@ -19,8 +19,6 @@ function [T,Y] = cartPendulumAnimation(t,y0,doanim)
 %   %Cart starts at rest, pendulum pointing straight up:
 %   [T,Y] = cartPendulumAnimation([0:1/40:15],[0,0,pi/2,0],true);
 
-
-
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 
 g = 9.81;   %m/s^2  acceleration due to gravity
@@ -54,6 +52,8 @@ end
     end
 
 [T,Y] = ode45(@cartPendulumODE,t,y0);
+
+
 %[T,Y] = ode45(@cartPendulumODE,t,y0,odeset('RelTol',1e-6,'AbsTol',1e-9));
 %[T,Y] = ode45(@cartPendulumODE,t,y0,odeset('RelTol',1e-16,'AbsTol',1e-16));
 %[T,Y] = ode89(@cartPendulumODE,t,y0,odeset('RelTol',1e-16,'AbsTol',1e-16));

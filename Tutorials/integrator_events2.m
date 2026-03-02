@@ -8,7 +8,7 @@ if ~exist('z0','var') || isempty(z0)
 end
 
 if ~exist('e','var') || isempty(e)
-    e = 1;  
+    e = 0.8;  
 end
 
 %define constants
@@ -21,8 +21,8 @@ g = 9.81;   %m/s^2  acceleration due to gravity
 
     function [value,isterminal,direction] = particle_in_gravity_event(~,z)
         %z = [x,xdot,y,ydot]
-        % this will be zero when the mass has a height of 0:
-        value = z(3); 
+        % this will be zero when the mass has a height of 0.5 (radius of drawn mass):
+        value = z(3)-0.5; 
         isterminal = 1; %we wish to stop the integration at this point
         direction = -1; %trigger decreasing events
     end
@@ -35,7 +35,7 @@ options = odeset('events',@particle_in_gravity_event);
 ttot = t;
 ztot = z;
 
-for bounce = 2:5
+for bounce = 2:10
     %find initial conditions for next bounce
     z0new = [ze(1:3), -e*ze(4)].';
     [t,z,te,ze] = ode45(@particle_in_gravity_eom,0:0.1:100,z0new,options);
