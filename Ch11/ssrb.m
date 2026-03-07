@@ -17,7 +17,7 @@ function varargout = ssrb(varargin)
 %      is stopped to their current values.  All values can be edited by the
 %      user to select a new initial integration state.
 %
-%      The first slider controls the ratio of the the moment of inertia
+%      The first slider controls the ratio of the moment of inertia
 %      about the non-symmetry body axes (I_1) to the moment of inertia
 %      about the symmetry axis (I_2).  Values of I1/I2 greater than 1 make
 %      the body a minor axis spinner.
@@ -377,7 +377,7 @@ end
 
 end
 
-%rest the omega trace
+%reset the omega trace
 function ssrb_reset_Omegatrace(handles)
 
 set(handles.Omegatrace,'XData',0,'YData',handles.statevec(end))

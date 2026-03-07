@@ -65,7 +65,7 @@ for i=1:length(t)
     plot([0,r_oprimeo(i,1)],[0,r_oprimeo(i,2)],'r','LineWidth',7)
     plot([r_oprimeo(i,1),r_po(i,1)],[r_oprimeo(i,2),r_po(i,2)],'b','LineWidth',7)
 
-    %draw the the mass:
+    %draw the mass:
     fill(xscirc+r_po(i,1),yscirc+r_po(i,2),'g');
 
     %set axes to proper values:

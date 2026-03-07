@@ -37,7 +37,7 @@ end
             -g/l*sin(y(1))];
     end
 
-    %simple pendulume ODE function
+    %simple pendulum ODE function
     function dy = accelPendulumODE(t,y)
         dy = [y(2);...
             -g/l*sin(y(1)) - a/l*cos(y(1))];

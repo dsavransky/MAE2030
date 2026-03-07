@@ -1,7 +1,7 @@
 function [t,res] = demoGyroAnimation(balanced,psid0)
 
 % demoGyroAnimation numerically integrates the equations of 
-% motion of the demo gryoscope (Kasdin & Paley Ex. 11.13) and animates the
+% motion of the demo gyroscope (Kasdin & Paley Ex. 11.13) and animates the
 % results.
 %
 % demoGyroAnimation(true) will perform the integration with the gyroscope
