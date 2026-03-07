@@ -53,7 +53,8 @@ if ishandle(fnum)
     close(fnum)
 end
 f = figure(fnum);
-f.Position = f.Position.*[1,1,1,1.5];
+%f.Position = f.Position.*[1,1,1,1.5];
+f.Position = [2771         100        1394        1260];
 
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);
