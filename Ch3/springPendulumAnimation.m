@@ -5,7 +5,7 @@ function res = springPendulumAnimation(t,y0,doanim)
 % res = springPendulumAnimation(t,y0,doanim) performs the integration for
 % time array t, with initial conditions y0 ([r(t0),\dot{r}(t0),theta(t0),
 % \dot\theta(t0)]) and animates if doanim is true. res contains the results
-% of the numerical integration See ode45 for details.
+% of the numerical integration. See ode45 for details.
 
 % Copyright (c) 2015 Dmitry Savransky (ds264@cornell.edu)
 

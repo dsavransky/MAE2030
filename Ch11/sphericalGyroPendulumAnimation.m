@@ -1,6 +1,6 @@
 function [t,res] = sphericalGyroPendulumAnimation(staticic,nospin)
 % sphericalGyroPendulumAnimation numerically integrates the equations of 
-% motion of a spherical gryopendulum and animates the results.
+% motion of a spherical gyropendulum and animates the results.
 %
 % sphericalGyroPendulumAnimation(true) will do the animation with initial
 % conditions producing circular motion about the vertical axis.
