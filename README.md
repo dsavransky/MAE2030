@@ -1,4 +1,6 @@
 # MAE 2030
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=dsavransky/MAE2030)
+
 MATLAB functions and scripts and Jupyter Python notebooks for sophomore dynamics class (Cornell MAE 2030, Princeton MAE 206). Based on Engineering Dynamics by Kasdin &amp; Paley (2011).
 
 These programs are intended to demonstrate various aspects of dynamics and numerical integration and animation of dynamical systems with MATLAB. The examples are largely based on the textbook Engineering Dynamics by Kasdin  &amp; Paley and serve as supplementary materials to the text and associated lectures.
