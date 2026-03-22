@@ -3,8 +3,8 @@ function [t,y] = doubleSimplePendulumAnimation(tspan,y0,mp,mq,l1,l2)
 % motion of a double simple pendulum and animates the results.
 %
 % [t,y] = doubleSimplePendulumAnimation(tspan,y0,mp,mq,l1,l2) performs the 
-% integration for time array tspan, with initial conditions y0 =
-% [theta_1(t0),\dot\theta_1(t0), theta_2(t0),\dot\theta_2(t0)]] 
+% integration for time array tspan, with initial conditions 
+% y0 = [theta_1(t0),\dot\theta_1(t0), theta_2(t0),\dot\theta_2(t0)]
 % Return values t and y contain the output of the ode45 integration
 %
 % See Example 8.9
