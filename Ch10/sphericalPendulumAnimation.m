@@ -14,7 +14,7 @@ if ~exist('staticic','var') || isempty(staticic)
 end
 
 %constants and initial conditions
-g = 9.81; %m/s
+g = 9.81; %m/s^2
 l = 1; %m
 
 phi0 = 120*pi/180;

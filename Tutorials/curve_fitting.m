@@ -1,9 +1,9 @@
 % Demonstration of use of the curve fitting toolbox fit function
 %
-% NOTE: As of March 2025, there appears to be a critical issue with the fit
+% NOTE: As of Spring 2026, there appears to be a critical issue with the fit
 % function when running on Apple Silicon macs.  The observed behavior is
 % that the call to the fit function ramps CPU usage to 100% on all cores,
-% and then runs for an unreasonable long time.  There is not yet a fix, but
+% and then runs for an unreasonably long time.  There is not yet a fix, but
 % a partial workaround is to execute (in MATLAB):
 %
 % >> maxNumCompThreads(1)
@@ -34,7 +34,7 @@ legend({'Noisy Measurement','True Data'})
 % note the required dimensionality of the inputs
 f1 = fit(x.', ynoisy.', 'smoothingspline', 'SmoothingParam', 0.999);
 
-% grab 1000 points from the spline
+% grab points from the spline
 x1 = linspace(min(x),max(x),5000);
 y1 = f1(x1);
 

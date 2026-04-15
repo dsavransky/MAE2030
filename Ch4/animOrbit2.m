@@ -67,7 +67,7 @@ axis(handles.orbAxes,'square');
 guidata(hObject, handles)
 
 %calculate initial orbit
-animOribt2_calcOrbit(hObject);
+animOrbit2_calcOrbit(hObject);
 
 
 
@@ -96,7 +96,7 @@ set(handles.eccen,'String',num2str(handles.data.e));
 % Update handles structure
 guidata(hObject, handles);
 
-animOribt2_calcOrbit(hObject);
+animOrbit2_calcOrbit(hObject);
 
 % --- Executes during object creation, after setting all properties.
 function e_slider_CreateFcn(hObject, eventdata, handles)
@@ -143,7 +143,7 @@ set(handles.e_slider,'Value',value);
 % Update handles structure
 guidata(hObject, handles);
 
-animOribt2_calcOrbit(hObject);
+animOrbit2_calcOrbit(hObject);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -175,11 +175,11 @@ end
 % Update handles structure
 guidata(hObject, handles);
 
-animOribt2_doAnim(hObject)
+animOrbit2_doAnim(hObject)
 
 
 %calculate orbit based on current values
-function animOribt2_calcOrbit(hObject)
+function animOrbit2_calcOrbit(hObject)
 
 handles = guidata(hObject);
 
@@ -244,7 +244,7 @@ end
 
 guidata(hObject, handles);
 
-function animOribt2_doAnim(hObject)
+function animOrbit2_doAnim(hObject)
 
 handles = guidata(hObject);
 go = handles.data.isPlaying;

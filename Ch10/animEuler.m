@@ -22,7 +22,7 @@ function [coordSys,as] = animEuler(h,rotSet,angs,axlabels)
 % Examples:  
 %     %perform the standard 3-1-3 rotation in figure 2
 %     animEuler(2);
-%     %preform a 3-2-1 rotation of 30 degrees each
+%     %perform a 3-2-1 rotation of 30 degrees each
 %     [coordSys,as] = animEuler([],[3,2,1],[30,30,30]);
 
 % Written by Dmitry Savransky 29 April 2009
