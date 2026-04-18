@@ -1,5 +1,5 @@
 function rot3daxes(h,as,l,ang,axSym,killLines)
-% rot3daxes preforms a simple rotation of an axis set created by make3daxes.
+% rot3daxes performs a simple rotation of an axis set created by make3daxes.
 % 
 % rot3daxes(h,as,l,ang) rotates the surface objects with
 % handles in array (as) in figure (h) by an angle (ang) about the axis
