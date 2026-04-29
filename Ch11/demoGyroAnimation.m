@@ -21,7 +21,7 @@ end
 
 
 %constants and initial conditions
-g = 9.81;       %m/s
+g = 9.81;       %m/s^2
 m = 1;          %kg counterweight mass
 M = 3;          %kg rotor mass
 lt = 48/100;    %cm->m total arm length

@@ -26,7 +26,7 @@ end
 
 
 %constants and initial conditions
-g = 9.81; %m/s
+g = 9.81; %m/s^2
 l = 1; %m
 m = 10; %kg
 if nospin
