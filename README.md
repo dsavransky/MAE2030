@@ -5,7 +5,7 @@ MATLAB functions and scripts and Jupyter Python notebooks for sophomore dynamics
 
 These programs are intended to demonstrate various aspects of dynamics and numerical integration and animation of dynamical systems with MATLAB. The examples are largely based on the textbook Engineering Dynamics by Kasdin  &amp; Paley and serve as supplementary materials to the text and associated lectures.
 
-Comments, questions, and additions are very welcome. If you are an instructor using these materials from your course, I'd love to hear from you.  Please email ds264@cornell.edu. 
+Comments, questions, and additions are very welcome. If you are an instructor using these materials for your course, I'd love to hear from you.  Please email ds264@cornell.edu. 
 
 Many thanks to the various Cornell MAE 2030 cohorts who have helped find and fix numerous errors and typos throughout the codebase. Your bonus points should post shortly. 
 
