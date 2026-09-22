@@ -58,7 +58,7 @@ MATLAB_ROOT=/Applications/MATLAB_R2025b.app python -m unittest discover -t . -s 
 
 `Notebooks/` (at the top level of this directory, not part of the installed package)
 contains one Jupyter notebook per ported chapter - e.g. `Notebooks/Ch2.ipynb` - that
-imports and runs every plotting/animation function in that chapter's subpackage, so
+imports every plotting/animation function in that chapter's subpackage, so
 the demos can be viewed without writing any code. Running them requires Jupyter and
 this package installed (`pip install -e .`):
 
@@ -67,10 +67,9 @@ jupyter notebook Notebooks/Ch2.ipynb
 ```
 
 Animations are displayed via matplotlib's `to_jshtml()` (an embedded, interactive JS
-player). This plays correctly when the notebook is run live, but note that GitHub's
-notebook renderer strips `<script>` tags for security, so an animation's controls will
-not render in a saved notebook viewed statically on GitHub - only the static plots
-will.
+player). To keep the notebooks small, the animation cells are saved unexecuted - run them
+locally to view the animations - while cells producing static plots are saved with their
+outputs.
 
 ## Conventions
 
