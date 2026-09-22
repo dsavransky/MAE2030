@@ -44,60 +44,59 @@ def simple_pendulum_sho_trajectory(
     return theta, thetad
 
 
-def compare_simple_pendulum_sho() -> Tuple[Figure, Figure]:
+def compare_simple_pendulum_sho() -> Figure:
     """Plot numerical simple pendulum trajectories against the SHO solution.
 
     Reproduces Example 3.9: for a large (pi/3 rad) and a small (0.1 rad) initial
-    angle, compares the numerically integrated pendulum equations of motion with
-    the analytical solution of the linearized equations.
+    angle, shown side by side, compares the numerically integrated pendulum
+    equations of motion with the analytical solution of the linearized
+    equations.
 
     Returns:
-        tuple:
-            fig_large (matplotlib.figure.Figure):
-                Figure for the large initial angle.
-            fig_small (matplotlib.figure.Figure):
-                Figure for the small initial angle.
+        matplotlib.figure.Figure:
+            Figure with a 2x2 grid of subplots: one column per initial angle
+            (large, then small), theta above thetadot.
 
     Example:
         >>> import matplotlib.pyplot as plt
-        >>> figs = compare_simple_pendulum_sho()
+        >>> fig = compare_simple_pendulum_sho()
         >>> plt.show()
     """
     t = np.linspace(0, 10, 150)
 
-    def make_figure(num: int, y0: Tuple[float, float]) -> Figure:
-        """Draw the comparison figure for one set of initial conditions.
+    fig = plt.figure(1, figsize=(11, 7))
+    fig.clf()
+    axes = fig.subplots(2, 2, sharex=True)
+
+    def make_figure(ax_th, ax_thd, y0: Tuple[float, float]) -> None:
+        """Draw the comparison plots for one set of initial conditions.
 
         Args:
-            num (int):
-                Matplotlib figure number.
+            ax_th (matplotlib.axes.Axes):
+                Axes to draw the theta trace on.
+            ax_thd (matplotlib.axes.Axes):
+                Axes to draw the thetadot trace on.
             y0 (tuple):
                 Initial state ``(theta(0), thetadot(0))``.
-
-        Returns:
-            matplotlib.figure.Figure:
-                The populated figure.
         """
         thsho, thdsho = simple_pendulum_sho_trajectory(t, y0)
         res = simple_pendulum_trajectory(t, y0)
 
-        fig = plt.figure(num, figsize=(5.75, 7))
-        fig.clf()
-        ax1, ax2 = fig.subplots(2, 1)
-        ax1.plot(t, thsho, linewidth=2, label="SHO Equations")
-        ax1.plot(t, res[:, 0], "--", linewidth=2, label="Numerical Integration")
-        ax1.legend()
-        ax1.tick_params(labelsize=18)
-        ax1.set_ylabel(r"$\theta$ (rad)", fontsize=18)
-        ax1.set_title(
+        ax_th.plot(t, thsho, linewidth=2, label="SHO Equations")
+        ax_th.plot(t, res[:, 0], "--", linewidth=2, label="Numerical Integration")
+        ax_th.legend()
+        ax_th.tick_params(labelsize=18)
+        ax_th.set_ylabel(r"$\theta$ (rad)", fontsize=18)
+        ax_th.set_title(
             rf"$\theta(0) = {y0[0]:g}$, $\dot\theta(0) = {y0[1]:g}$", fontsize=18
         )
-        ax2.plot(t, thdsho, linewidth=2)
-        ax2.plot(t, res[:, 1], "--", linewidth=2)
-        ax2.tick_params(labelsize=18)
-        ax2.set_xlabel("Time (s)", fontsize=18)
-        ax2.set_ylabel(r"$\dot\theta$ (rad/s)", fontsize=18)
-        fig.tight_layout()
-        return fig
+        ax_thd.plot(t, thdsho, linewidth=2)
+        ax_thd.plot(t, res[:, 1], "--", linewidth=2)
+        ax_thd.tick_params(labelsize=18)
+        ax_thd.set_xlabel("Time (s)", fontsize=18)
+        ax_thd.set_ylabel(r"$\dot\theta$ (rad/s)", fontsize=18)
 
-    return make_figure(1, (np.pi / 3, 0.0)), make_figure(2, (0.1, 0.0))
+    make_figure(axes[0, 0], axes[1, 0], (np.pi / 3, 0.0))
+    make_figure(axes[0, 1], axes[1, 1], (0.1, 0.0))
+    fig.tight_layout()
+    return fig
