@@ -66,10 +66,23 @@ this package installed (`pip install -e .`):
 jupyter notebook Notebooks/Ch2.ipynb
 ```
 
-Animations are displayed via matplotlib's `to_jshtml()` (an embedded, interactive JS
+Most animations are displayed via matplotlib's `to_jshtml()` (an embedded, interactive JS
 player). To keep the notebooks small, the animation cells are saved unexecuted - run them
 locally to view the animations - while cells producing static plots are saved with their
 outputs.
+
+Some chapters (starting with Ch4) instead use an interactive widget - a `plotly` figure
+restyled in place by `ipywidgets` controls (sliders, a Play/Pause control, checkboxes) -
+rather than a pre-rendered animation player. These require a live Jupyter kernel
+connection (they will not display or respond in a plain script) and the `notebook`
+extra:
+
+```
+pip install -e '.[notebook]'
+```
+
+Their figure cells are always saved unexecuted, since the widget only renders inside a
+live kernel and can't be pre-rendered into a static, saved output.
 
 ## Conventions
 

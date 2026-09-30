@@ -41,6 +41,16 @@ dependencies = [
 test = [
   "matlabengine==25.2.2",
 ]
+# Notebook-only: ch4's interactive orbit widget uses ipywidgets for its
+# eccentricity control and plotly for the animated figure itself (Play/Pause,
+# scrub slider and visibility toggle run entirely client-side in the
+# browser). Requires a live Jupyter kernel connection - it will not display
+# or respond in a plain script. Not needed to import this package or call
+# ch4.kepler_orbit_trajectory, which only need the core dependencies.
+notebook = [
+  "ipywidgets",
+  "plotly",
+]
 
 [project.urls]
 Homepage = "https://github.com/dsavransky/MAE2030"
