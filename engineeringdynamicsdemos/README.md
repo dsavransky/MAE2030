@@ -1,15 +1,9 @@
 # engineeringdynamicsdemos
 
 Python port of the MATLAB demo/animation functions in this repository
-(`Public/Ch2` ... `Public/Ch11`, `Public/Shared`, `Public/Tutorials`,
-`Public/SlideFigures`) for Cornell MAE 2030 / Princeton MAE 206 (Engineering
-Dynamics, based on Kasdin & Paley's *Engineering Dynamics*). The port is
-being done incrementally, one chapter/subdirectory at a time; see the
-package's subpackages for what has been ported so far.
-
-None of the original MATLAB source is modified by this port - this package
-is purely additive, reproducing the same demos/figures/animations in Python
-for students and instructors who prefer not to use MATLAB.
+(`Ch2` ... `Ch11`, `Shared`, `Tutorials`,
+`SlideFigures`) for Cornell MAE 2030 / Princeton MAE 206 (Engineering
+Dynamics, based on Kasdin & Paley's *Engineering Dynamics*). 
 
 ## Installation
 
@@ -44,15 +38,15 @@ MATLAB_ROOT=/Applications/MATLAB_R2025b.app python -m unittest discover -t . -s 
 
 ## Package layout
 
-- `shared/` - Python ports of `Public/Shared/*.m`. Note that
+- `shared/` - Python ports of `Shared/*.m`. Note that
   `Shared/DCMs.m`'s direction-cosine-matrix functionality is not
-  reimplemented here; use the `angutils` package's `rotMat` function
+  reimplemented here; the `angutils` package's `rotMat` function is used
   instead (https://pypi.org/project/angutils/), which computes identical
   matrices under the same convention.
-- `ch2/` ... `ch11/` - Python ports of `Public/Ch2` ... `Public/Ch11`
+- `ch2/` ... `ch11/` - Python ports of `Ch2` ... `Ch11`
   (subpackages are added as each chapter is ported).
-- `tutorials/`, `slide_figures/` - Python ports of `Public/Tutorials` and
-  `Public/SlideFigures` (added in a later iteration).
+- `tutorials/`, `slide_figures/` - Python ports of `Tutorials` and
+  `SlideFigures` (added in a later iteration).
 
 ## Demo notebooks
 
@@ -92,3 +86,7 @@ live kernel and can't be pre-rendered into a static, saved output.
   (no system LaTeX is used anywhere in this package) renders `\mathbf{\hat{e}}_1`
   correctly, but silently drops the hat entirely for `\hat{\mathbf{e}}_1` - the hat
   must wrap the bare letter first, then get bolded around that.
+
+## Generative AI Acknowledgement
+
+The original MATLAB code is 100% human-written.  The ported Python code has made extensive use of Claude Code, an AI coding assistant by Anthropic (https://claude.ai/) utilzing multiple different models including Opus 5, 5.5 and Sonnet 4.5, 5.  The final code and all outputs were reviewed and tested by the original author. 
